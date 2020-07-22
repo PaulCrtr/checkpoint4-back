@@ -32,6 +32,8 @@ CREATE TABLE IF NOT EXISTS `recipes`.`Recipe` (
   `name_recipe` VARCHAR(45) NULL,
   `time_recipe` VARCHAR(45) NULL,
   `number_recipe` VARCHAR(45) NULL,
+  `image` VARCHAR(250) NULL,
+  `author` VARCHAR(45) NULL,
   PRIMARY KEY (`id_recipe`))
 ENGINE = InnoDB;
 
@@ -79,3 +81,4 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
