@@ -10,9 +10,11 @@ app.use(
 
 const recipeRoute = require("./routes/recipeRoute");
 const ingredientRoute = require("./routes/ingredientRoute");
+const instructionRoute = require("./routes/instructionRoue");
 
 app.use("/recipes", recipeRoute);
 app.use("/ingredients", ingredientRoute);
+app.use("/instructions", instructionRoute);
 
 app.listen(8000, () => {
   console.log("Example app listening on port 8000!");
