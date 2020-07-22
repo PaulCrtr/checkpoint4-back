@@ -106,10 +106,6 @@ recipeRouter.post(
           console.log(error);
           res.status(500).json({ status: "internal server error" });
         } else {
-          // res.status(201).json({
-          //   status: "success",
-          //   recipeCreated: { id: results.insertId, ...req.body },
-          // });
           req.body.recipeCreated = { id: results.insertId, ...data };
           next();
         }
