@@ -154,10 +154,7 @@ recipeRouter.post(
           res.status(500).json({ status: "internal server error" });
         } else {
           const ingredientsHasRecipe = [...data].map((e, i) => {
-            return [
-              req.body.recipeCreated.id,
-              i + 1 + results.insertId - results.affectedRows,
-            ];
+            return [req.body.recipeCreated.id, i + results.insertId];
           });
           req.body.recipeCreated = {
             ...req.body.recipeCreated,
@@ -171,11 +168,10 @@ recipeRouter.post(
   },
   (req, res) => {
     const data = req.body.recipeCreated.ingredientsHasRecipe;
-    console.log(data);
     db.query(
       "INSERT INTO Ingredient_has_Recipe (Recipe_id_recipe, Ingredient_id_ingredient) VALUES ?",
       [data],
-      (error, results) => {
+      (error, _) => {
         if (error) {
           console.log(error);
           res.status(500).json({ status: "internal server error" });
