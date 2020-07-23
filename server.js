@@ -10,10 +10,14 @@ app.use(
   })
 );
 
-const recipeRoute = require("./routes/recipeRoute");
+const getOneRecipe = require("./routes/getOneRecipe");
+const postRecipe = require("./routes/postRecipe");
+const getAllRecipes = require("./routes/getAllRecipes");
 const ingredientRoute = require("./routes/ingredientRoute");
 
-app.use("/recipes", recipeRoute);
+app.use("/recipes", getOneRecipe);
+app.use("/recipes", postRecipe);
+app.use("/recipes", getAllRecipes);
 app.use("/ingredients", ingredientRoute);
 
 app.listen(8000, () => {
